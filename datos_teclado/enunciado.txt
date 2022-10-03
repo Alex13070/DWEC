@@ -1,0 +1,10 @@
+Pedir nombre y correo de usuario por pantalla
+
+
+Calcular el area de un círculo dado un radio
+
+Pedir 4 edades: Calcular la suma del mayor y del menor junto al producto de la segunda y la tercera  --> 1+4 + 3*2
+
+Solicitar lados de un cuadrado y mostrar perímetro
+
+Cantidad * precio y mostrar por pantalla
