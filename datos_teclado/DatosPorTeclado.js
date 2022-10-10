@@ -17,6 +17,7 @@ function segundo () {
         radio = prompt("Dime el radio", "");
     } while (isNaN(radio));
    
+    radio = parseInt(radio)
 
     let div = document.getElementById("segundo");
 
@@ -41,6 +42,9 @@ function tercero () {
         console.log(element)
     });    
 
+    array.map(v => parseInt(v))
+
+    array
 
     let div = document.getElementById("tercero");
 
@@ -61,7 +65,7 @@ function cuarto () {
     let div = document.getElementById("cuarto");
 
     div.innerHTML = "<h2>Perímetro del cuadrado<h2/>"
-    div.innerHTML += "<p>Perímetro: {p} </p>".replace("{p}", lado*4);
+    div.innerHTML += "<p>Perímetro: {p} </p>".replace("{p}", parseInt(lado)*4);
     
 }
 
