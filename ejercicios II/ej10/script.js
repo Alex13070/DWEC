@@ -20,9 +20,18 @@ function pedirTipo(io) {
     return tipo
 }
 
-function pasarA() {
-    //No voy a escribir esto 
-    return "Digamos que he hecho el proceso"
+function pasarA(dinero, entrada, salida) {
+    let retorno = dinero
+
+    if (entrada == "E" && salida == "D") {
+        retorno *= 1
+    }
+    else if (entrada == "E" && salida == "Y") {
+        retorno *= 144.64
+    }
+    // ...
+
+    return retorno
 }
 
 let entrada = pedirTipo("entrada")
@@ -32,5 +41,5 @@ let num = pedirNumero("Dime la cantidad en {entrada}".replace("{entrada}", entra
 
 
 
-alert(pasarA())
+alert(pasarA(num, entrada, salida))
 

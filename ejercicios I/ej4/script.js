@@ -28,4 +28,4 @@ let num = pedirNumero("Dime un numero: ")
 
 let elemento = document.getElementById("resultado")
 
-elemento.innerHTML = "El número introducido {num}, que {capicua} capicua".replace("{num}", num).replace("{capicua}", esCapicua(num)?"es": "no es")
+elemento.innerHTML = "El número introducido {num}, {capicua} capicua".replace("{num}", num).replace("{capicua}", esCapicua(num)?"es": "no es")
