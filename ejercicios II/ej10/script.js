@@ -14,7 +14,7 @@ function pedirTipo(io) {
     let tipo
     
     do {
-        tipo = prompt("Dime el tipo de {io} (E euro, D dolar, Y yen, L libras)").replace("{io}", io).toUpperCase().trim()
+        tipo = prompt("Dime el tipo de {io} (E euro, D dolar, Y yen, L libras)".replace("{io}", io)).toUpperCase().trim()
     } while (tipo != "E" && tipo != "D" && tipo != "Y" && tipo != "L")
 
     return tipo
