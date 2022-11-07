@@ -60,6 +60,8 @@ function contarCaracteres(frase) {
     return frase.split(" ").map(s => s.length).reduce((acumulador, a) => acumulador + a, 0)
 }
 
+
+
 function pintarDatos() {
     let resultado = document.getElementById("resultado-formulario")
     let pelicula = {
@@ -68,15 +70,21 @@ function pintarDatos() {
         year: document.getElementById("year").value
     }
 
+
+
     mostrar = `
         <p>El tamaño del titulo es: `+ contarCaracteres(pelicula.titulo) + `</p>
         <p>El tamaño del nombre del autor es: `+ contarCaracteres(pelicula.autor) + `</p>
 
         <table>
-            
+            <tr>
+                <td></td>
+                <td>Minúscula</td>
+                <td>Mayuscula<td>
+            </tr>
             <tr>
                 <td>Autor</td>
-                <td> ` + pelicula.autor.toLowerCase() + `</td>
+                <td>` + pelicula.autor.toLowerCase() + `</td>
                 <td>` + pelicula.autor.toUpperCase() + `</td>
             </tr>
             <tr>

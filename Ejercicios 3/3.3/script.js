@@ -5,17 +5,8 @@ var ventana = null
 
 
 function abrirURL (){
-    let url = document.getElementById("url");
-    let w = window.open("", "Comunicacion de ventanas", "width=600, height=500")
-
-    w.document.write(url.value)
-    
-    let cerrar = document.getElementById("cerrar")
-
-    ventana = w
-
-    cerrar.innerHTML = "<button onclick='cerrarVentana()'>cerrar</button>"
-
+    ventana = window.open("https://www.w3schools.com/js", "Comunicacion de ventanas", "width=600, height=500")
+    setTimeout( () => cerrarVentana(), 3000);
 }
 
 function cerrarVentana () {
