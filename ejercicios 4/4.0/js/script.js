@@ -10,6 +10,8 @@
 //          Cádiz. Indicando a que delegación pertenece cada lista ordenada
 //     d) Determinar  el sueldo menor y el mayor de las tres delegaciones.
 
+
+
 let sevilla = [
     new Empleado("Jorge", 1500),
     new Empleado("Pepe", 1000), 
@@ -32,7 +34,7 @@ let cadiz = [
 ]
 
 function mostrarEmpleado(empleado) {
-    console.log(`Nombre: ${empleado.nombre}, Sueldo ${empleado.sueldo}`);
+    document.writeln("<p>" + `Nombre: ${empleado.nombre}, Sueldo ${empleado.sueldo}` + "</p>");
 }
 
 function sueldoMedio(array) {
@@ -51,33 +53,32 @@ function ordenarMostrar(array) {
 
 function mostrarMaximoMinimo(array) {
     ordenar(array);
-    console.log(`Sueldo minimo: Nombre: ${array[0].nombre}, Sueldo ${array[0].sueldo}`);
-    console.log(`Sueldo maximo: Nombre: ${array[array.length - 1].nombre}, Sueldo ${array[array.length - 1].sueldo}`);
+    document.writeln("<p>" + `Sueldo minimo: Nombre: ${array[0].nombre}, Sueldo ${array[0].sueldo}` + "</p>");
+    document.writeln("<p>" + `Sueldo maximo: Nombre: ${array[array.length - 1].nombre}, Sueldo ${array[array.length - 1].sueldo}` + "</p>");
 
 }
+document.writeln("<h2>" + "Apartado a:" + "</h2>");
 
-console.info("Apartado a:")
+document.writeln("<p>" + "Sevilla: " + sevilla.length + "</p>");
+document.writeln("<p>" + "Huelva: " + huelva.length + "</p>");
+document.writeln("<p>" + "Cadiz: " + cadiz.length + "</p>");
 
-console.log("Sevilla: " + sevilla.length);
-console.log("Huelva: " + huelva.length);
-console.log("Cadiz: " + cadiz.length);
+document.writeln("<h2>" + "Apartado b:" + "</h2>");
 
-console.info("Apartado b:")
+document.writeln("<p>" + "Sevilla: " + sueldoMedio(sevilla) + "</p>");
+document.writeln("<p>" + "Huelva: " + sueldoMedio(huelva) + "</p>");
+document.writeln("<p>" + "Cadiz: " + sueldoMedio(cadiz) + "</p>");
 
-console.log("Sevilla: " + sueldoMedio(sevilla));
-console.log("Huelva: " + sueldoMedio(huelva));
-console.log("Cadiz: " + sueldoMedio(cadiz));
+document.writeln("<h2>" + "Apartado c:" + "</h2>");
 
-console.info("Apartado c:")
-
-console.info("Sevilla:");
+document.writeln("<h3>" + "Sevilla:" + "</h3>");
 ordenarMostrar(sevilla);
-console.info("Huelva:");
+document.writeln("<h3>" + "Huelva:" + "</h3>");
 ordenarMostrar(huelva);
-console.info("Cadiz:");
+document.writeln("<h3>" + "Cádiz:" + "</h3>");
 ordenarMostrar(cadiz);
 
-console.info("Apartado d:")
+document.writeln("<h2>" + "Apartado d:" + "</h2>");
 mostrarMaximoMinimo(sevilla.concat(huelva, cadiz))
 
 
