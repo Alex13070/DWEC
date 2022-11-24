@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio practica 5.2</title>
+    <style>
+        body{
+            background-color: lightblue;
+        }
+        h1{
+            text-align: center;
+        }
+        div{
+            margin-top: 5%;
+        }
+        .caja{
+            width: 30%;
+            margin: auto;
+            margin-top: 10px;
+            border: 1px solid black;
+            background-color: aliceblue;
+             box-shadow: 5px 5px 8px 5px #161616;
+        }
+        p{
+            font-weight: bold;
+            font-size: 32px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Ejercicio en el que nos devuelva la posición del mouse</h1>
+
+     <div class="caja">
+        <h3>Posicion del mouse:</h3>
+        <p>X:<span id="valor-x"></span></p>
+        <p>Y:<span id="valor-y"></span></p>
+    </div>
+    
+    <div class="caja">
+        <h3>Posicion respecto a la pantalla:</h3>
+        <p>X:<span id="click-x"></span></p>
+        <p>Y:<span id="click-y"></span></p>
+    </div>
+
+    <script type="text/javascript">
+
+        window.addEventListener('mousemove', function (e){
+
+            let x = event.screenX;
+            let y = event.screenY;
+
+            document.getElementById("valor-x").textContent = e.clientX;
+            document.getElementById("valor-y").textContent = e.clientY;
+
+            document.getElementById("click-x").textContent = x;
+            document.getElementById("click-y").textContent = y;
+
+        }); 
+    </script>
+</body>
+</html>
