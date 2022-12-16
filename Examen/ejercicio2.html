@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+</head>
+<body>
+    <script>
+        const array = [
+            1, 31, 253, 4, 5, 6, 20, 8, 8000, 10
+        ];
+
+        function sumarTodo(array) {
+            return array.reduce((ac, n) => ac+n, 0);
+        }
+
+        function menorQue600(array) {
+            return sumarTodo(array.filter(n => n<600));
+        }
+
+        function mayorQue2000(array) {
+            return sumarTodo(array.filter(n => n>2000));
+        }
+        
+        console.log("Valor acumulado de los elementos: " + sumarTodo(array));
+        console.log("Suma de los valores menores a 600: " + menorQue600(array));
+        console.log("Suma de los valores mayores a 2000: " + mayorQue2000(array));
+        mayorQue2000(array);
+    </script>
+</body>
+</html>
