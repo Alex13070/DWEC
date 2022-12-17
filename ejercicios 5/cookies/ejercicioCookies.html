@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        main, section{
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Formularo discografico</h1>
+        <form action="" method="get" id="formulario">
+
+            <section>
+                <label for="nombre">Nombre del disco: </label>
+                <input type="text" name="nombre" id="nombre">
+            </section>
+
+            <section>
+                <label for="grupo">Nombre del autor o grupo</label>
+                <input type="text" name="grupo" id="grupo">
+            </section>
+
+            <section>
+                <label for="tipo">Tipo de musica</label> 
+                <div>
+                    <input type="radio" name="tipo" id="rock" value="rock"> Rock 
+                </div>
+                <div>
+                    <input type="radio" name="tipo" id="pop" value="pop"> Pop
+                </div>
+                <div>
+                    <input type="radio" name="tipo" id="Indie"> Indie
+                </div>
+            </section>
+
+            <section><label for="comentario">Comentario</label><br>
+                <textarea name="comentario" id="comentario" cols="30" rows="10" placeholder="-- Comentario sobre el album --"></textarea>
+            </section>
+
+            <section>
+                <input type="submit" value="Enviar" id="enviar">
+                <button id="enviar">Limpiar datos</button>
+            </section>
+
+        </form>
+    </main>
+
+    <script>
+        //Inicializamos la cookie a 0;
+        document.cookie = `cookie=${0}`
+        const form = document.getElementById("formulario");
+        const nombre = document.getElementById("nombre");
+        const grupo = document.getElementById("grupo");
+        const rock = document.getElementById("rock");
+        const pop = document.getElementById("pop");
+        const indie = document.getElementById("indie");
+        const comentario = document.getElementById("comentario");
+
+
+        function todoRelleno() {
+            return nombre.value.length > 0 && grupo.value.length > 0 && (
+                rock.checked || pop.checked || indie.checked
+            )
+        }
+
+        function validarCampos() {
+            if (!todoRelleno()) {
+                alert("Faltan campos por rellenar");
+                return false;
+            }
+            
+            let regexpNombre = /^[a-zA-Z0-9]{1,25}$/;
+            let regexpGrupo = /^([A-Z-_]{1})[a-zA-Z0-9]{1,19}$/;
+
+            if (!regexpNombre.test(nombre.value)) {
+                alert("Nombre no valido");
+                return false;
+            }
+
+            if (!regexpGrupo.test(grupo.value)) {
+                alert("Grupo no valido");
+                return false;
+            }
+
+            if (comentario.value > 300) {
+                alert("El comentario solo acepta 300 caracteres.")
+                return false;
+            }
+
+            
+
+            return true;
+        }
+
+        function getIntentos() {
+            let x = document.cookie;
+            return parseInt(x.split("=")[1]);
+        }
+
+        form.onsubmit = (ev) => {
+            ev.preventDefault();
+            if (!validarCampos()) {
+                document.cookie = `cookie=${getIntentos()+1}`;
+                console.log(`Intento: ${getIntentos()}`)
+            }
+            else {
+                alert(`Todo correcto. Intentos: ${getIntentos()}`);
+            }
+
+            return false;
+        }
+
+    </script>
+
+</body>
+</html>

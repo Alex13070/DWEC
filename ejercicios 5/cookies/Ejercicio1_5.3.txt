@@ -1,0 +1,10 @@
+Cookies:
+
+	Ubuntu: 
+		Firefox: /home/alex/snap/firefox/common/.mozilla/firefox/zzhcxhsq.default
+		Chrome: /home/your_name/.config/google-chrome/Default/Cookies
+	Windows: 
+		Firefox: C:\Users\user\AppData\Roaming\Mozilla\Firefox\Profiles
+		Chrome: C:\Users\user\AppData\Local\Google\Chrome\User Data\Default
+		Edge: C:\Users\user\AppData\Local\Microsoft\Edge\User Data\Default
+		Opera: C:\Users\Your_User_Name\AppData\Roaming\Opera Software\Opera Stable
