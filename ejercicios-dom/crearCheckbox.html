@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear checkbox</title>
+    <style>
+        * {
+            margin: 0%;
+            padding: 0%;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        html {
+            background-color: lightgray;
+        }
+
+
+        
+        label {
+            margin-right: 10px;
+        }
+        input {
+            margin-right: 10px;
+        }
+
+        input[type=number] {
+            border-radius: 4px;
+            border-color: grey;
+            padding: 5px;
+        }
+
+        input[type=number]:hover {
+            border-color: black;
+        }
+
+        section {
+            background-color: white;
+            border-radius: 5px;
+            margin: 20px;
+            padding: 20px;
+            width: 80vw;
+            box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+        }
+
+        section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        button {
+            border: none;
+            background-color: rgb(0, 89, 255);
+            padding: 10px;
+            color: white;
+            font-weight: bold;
+            border-radius: 6px;
+            width: 10vw;
+        }
+
+        button:hover {
+            background-color: rgb(0, 132, 255);
+        }
+
+        .checkbox {
+            padding: 5px;
+        }
+
+    </style>
+</head>
+<body>
+    <main>
+        <section>
+            <label for="check">Crear checkbox: </label>
+            <input type="number" name="numero" id="number" min="1">
+            <button onclick="javascript:escribirResultado()">Generar</button>
+        </section>
+        <section>
+            <div id="resultado">
+            </div>
+        </section>
+    </main>
+
+    <script>
+        
+        function escribirResultado() {
+            let cantidad = document.querySelector('input[name="numero"]').value;
+            document.querySelector("div#resultado").innerHTML = "";
+            for (let i = 0; i < cantidad; i++) {
+                crearCheck(i+1);
+            }
+        }
+
+
+
+
+        function crearCheck(n) {
+            let div = document.createElement("div");
+            let chk = document.createElement("input");
+            let label = document.createElement("label");
+            
+            div.setAttribute("class", "checkbox");
+
+            chk.setAttribute("type", "checkbox");
+            chk.setAttribute("id", n);
+
+            label.setAttribute("for", n)
+            label.innerHTML = `Checkbox número ${n}`
+
+            div.appendChild(chk)
+            div.appendChild(label)
+
+            document.querySelector("div#resultado").appendChild(div);
+        }
+
+    </script>
+</body>
+</html>

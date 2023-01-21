@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Texto dinámico</title>
+    <style>
+        * {
+            padding: 0%;
+            margin: 0%;
+        }
+
+        html {
+            background-color: lightgray;
+        }
+
+        style {
+            display: inline;
+        }
+
+        main {
+            width: 60vw;
+            margin: 20px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .botones{
+            padding-top: 30px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        button {
+            border: none;
+            background-color: rgb(0, 89, 255);
+            padding: 10px;
+            color: white;
+            font-weight: bold;
+            border-radius: 6px;
+            width: 10vw;
+        }
+
+        button:hover {
+            background-color: rgb(0, 132, 255);
+        }
+        
+    </style>
+</head>
+<body>
+    <main>
+        <h1 id="texto">Esto es un texto dinámico</h1>
+        <div class="botones">
+            <button onclick="javascript:changeColor()">Cambiar color</button>
+            <button onclick="javascript:changeSize()">Cambiar tamaño</button>
+        </div>
+    </main>
+    
+    <script>
+        function changeColor() {
+            let color = prompt("Dime el color que quieres ponerle al texto: (Formato: #XXXXXX)");
+            document.querySelector("h1").style.color = color;
+        }
+
+        function changeSize() {
+            let size = prompt("Dime el tamaño que quieres ponerle al texto: ");
+            document.querySelector("h1").style.fontSize = `${size}px`;
+        }
+    </script>
+</body>
+</html>
